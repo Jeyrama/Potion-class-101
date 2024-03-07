@@ -24,3 +24,6 @@ Example:
 
 Note: Use ceiling when calculating the resulting potion's color.
 */
+
+
+// Solution
