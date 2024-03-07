@@ -33,13 +33,15 @@ class Potion {
     this.color = color
     this.volume = volume
   }
-
+  
   mix(other) {
     let [r1, g1, b1] = this.color
     let [r2, g2, b2] = other.color
-
+    
     let totalVolume = this.volume + other.volume
+    
     const addColor = (fst, snd) => Math.ceil(fst * this.volume / totalVolume + snd * other.volume / totalVolume)
+    
     return new Potion(
       [
         addColor(r1, r2),
@@ -50,3 +52,5 @@ class Potion {
     )
   }
 }
+
+// or
