@@ -27,3 +27,26 @@ Note: Use ceiling when calculating the resulting potion's color.
 
 
 // Solution
+
+class Potion {
+  constructor(color, volume) {
+    this.color = color
+    this.volume = volume
+  }
+
+  mix(other) {
+    let [r1, g1, b1] = this.color
+    let [r2, g2, b2] = other.color
+
+    let totalVolume = this.volume + other.volume
+    const addColor = (fst, snd) => Math.ceil(fst * this.volume / totalVolume + snd * other.volume / totalVolume)
+    return new Potion(
+      [
+        addColor(r1, r2),
+        addColor(g1, g2),
+        addColor(b1, b2)
+      ],
+      totalVolume
+    )
+  }
+}
