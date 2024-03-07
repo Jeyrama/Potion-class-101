@@ -54,3 +54,14 @@ class Potion {
 }
 
 // or
+
+class Potion {
+  constructor(color, volume) {
+    this.color = color
+    this.volume = volume
+  }
+  mix(p) {
+    let tV = this.volume + p.volume
+    return new Potion(this.color.map((e,i)=>Math.ceil(e*(this.volume/tV)+p.color[i]*(p.volume/tV))), tV)
+  }
+}
